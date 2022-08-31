@@ -1,4 +1,4 @@
-import { BufWrapper, BufWrapperPlugins } from '@minecraft-js/bufwrapper';
+import { BufWrapper } from '@minecraft-js/bufwrapper';
 import { tags } from '..';
 import { getTagId } from '../utils/getTagId';
 import { NBT_TAG, TagType } from './Tag';
@@ -6,10 +6,7 @@ import { NBT_TAG, TagType } from './Tag';
 export class NBT_List extends NBT_TAG<NBT_TAG<unknown>[]> {
   public static id = TagType.List;
 
-  public write(
-    buf: BufWrapper<BufWrapperPlugins>,
-    payload?: NBT_TAG<unknown>[]
-  ): BufWrapper<BufWrapperPlugins> {
+  public write(buf: BufWrapper, payload?: NBT_TAG<unknown>[]): BufWrapper {
     this.payload = payload ?? this.payload;
 
     const tag0Id = getTagId(this.payload[0]);

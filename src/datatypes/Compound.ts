@@ -1,14 +1,11 @@
-import { BufWrapper, BufWrapperPlugins } from '@minecraft-js/bufwrapper';
+import { BufWrapper } from '@minecraft-js/bufwrapper';
 import { tags } from '..';
 import { NBT_TAG, TagType } from './Tag';
 
 export class NBT_Compound extends NBT_TAG<NBT_TAG<any>[]> {
   public static id = TagType.Compound;
 
-  public write(
-    buf: BufWrapper<BufWrapperPlugins>,
-    payload?: NBT_TAG<any>[]
-  ): BufWrapper<BufWrapperPlugins> {
+  public write(buf: BufWrapper, payload?: NBT_TAG<any>[]): BufWrapper {
     this.payload = payload ?? this.payload;
     buf.writeBytes([NBT_Compound.id]);
 

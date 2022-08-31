@@ -1,14 +1,11 @@
-import { BufWrapper, BufWrapperPlugins } from '@minecraft-js/bufwrapper';
+import { BufWrapper } from '@minecraft-js/bufwrapper';
 import { getTagId } from '../utils/getTagId';
 import { NBT_TAG, TagType } from './Tag';
 
 export class NBT_Long extends NBT_TAG<bigint> {
   public static id = TagType.Long;
 
-  public write(
-    buf: BufWrapper<BufWrapperPlugins>,
-    payload?: bigint
-  ): BufWrapper<BufWrapperPlugins> {
+  public write(buf: BufWrapper, payload?: bigint): BufWrapper {
     this.payload = payload ?? this.payload;
     buf.writeBytes([NBT_Long.id]);
 
