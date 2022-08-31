@@ -1,6 +1,6 @@
 {
   "name": "@minecraft-js/nbt",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Read and write NBT files. Also supports Zlib and Gzip",
   "main": "dist/index.js",
   "browser": "dist/browser.js",
