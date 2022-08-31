@@ -1,27 +1,39 @@
 {
-  "name": "template",
+  "name": "@minecraft-js/nbt",
   "version": "1.0.0",
-  "description": "todo: change",
+  "description": "Read and write NBT files. Also supports Zlib and Gzip",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "build": "tsc",
+    "benchmark": "node benchmark"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MinecraftJS/template.git"
+    "url": "git+https://github.com/MinecraftJS/nbt.git"
   },
   "keywords": [
     "minecraftjs"
   ],
-  "author": "todo: change",
+  "author": "RichardDorian",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MinecraftJS/template/issues"
+    "url": "https://github.com/MinecraftJS/nbt/issues"
   },
-  "homepage": "https://github.com/MinecraftJS/template#readme",
+  "homepage": "https://github.com/MinecraftJS/nbt#readme",
+  "dependencies": {
+    "@minecraft-js/bufwrapper": "^1.4.2"
+  },
   "devDependencies": {
+    "@types/node": "^17.0.24",
+    "benchmark": "^2.1.4",
     "prettier": "^2.6.1",
     "typescript": "^4.6.3"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.x"
   }
 }
